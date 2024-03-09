@@ -11,6 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh 'rm -rf docker_repo'
+                sh 'git clone "
             }
         }
         
