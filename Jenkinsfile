@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'rm -rf instance_terraform_with_docker'
+                sh 'rm -rf docker_repo'
             }
         }
         
