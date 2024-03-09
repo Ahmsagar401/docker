@@ -1,12 +1,12 @@
 
 provider "aws" {
-  region = "ap-northeast-1"
+  region = "us-east-1"
 }
 
 # Security group start here
 
 resource "aws_security_group" "allow_SG" {
-  name        = "allow_SG"
+  name        = "my_SG"
   description = "ssh"
 
   ingress {
@@ -26,11 +26,11 @@ resource "aws_security_group" "allow_SG" {
 # Security group end here
 
 resource "aws_instance" "example" {
-  ami                    = "ami-00247e9dc9591c233"
-  instance_type          = "t2.micro"
+  ami                    = "ami-07d9b9ddc6cd8dd30"
+  instance_type          = "t2.medium"
   security_groups        = [aws_security_group.allow_SG.name]
   user_data              = file("docker.sh")
   tags = {
-    Name = "docker"
+    Name = "docker-server"
   }
 }
