@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        TF_VAR_aws_access_key = credentials('aws-access-key')
-        TF_VAR_aws_secret_key = credentials('aws-secret-key')
+        aws_access_key = credentials('aws-access-key')
+        aws_secret_key = credentials('aws-secret-key')
     }
 
     stages {
